@@ -39,7 +39,7 @@ public class Routes2 {
 			System.exit(0);
 
 		} else {
-
+			
 			int n = Integer.parseInt(args[0]);
 			int m = Integer.parseInt(args[1]);
 
@@ -48,9 +48,9 @@ public class Routes2 {
 			System.out.println(finalValue);  
 
 			//Assertion: exactly 2 nonnegative integers have been provided as input
-			//1. argument 0 is n, argument 1 is m, both 
+			//Precondition: argument 0 is n, argument 1 is m, both 
 			//   are inputted as arguments into count
-			//2. the final value Routes(n,m), has been outputeed into
+			//Postcondition: the final value Routes(n,m), has been outputeed into
 			//   finalValue and has been printed to console
 
 		}
@@ -115,8 +115,21 @@ public class Routes2 {
                 
                 }
 
-        
+ //outer loop invariants
+//1. n and m are integer inputs such that n >= 1 and m>=1.
+//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
+//3. i is an integer variable such that 0 <= i <= n+1
+//4. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
 
+//inner loop invariants
+//1. n and m are integer inputs such that n >= 1 and m>=1.
+//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
+//3. i is an integer variable such that 0 <= i <= n+1
+//4. j is an integer variable such that 0 <= j <= m+1
+//5. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
 
+//bound functions
+//F(m,j) = m-j+1
+//F(n,i) = n-i+1
 
 
