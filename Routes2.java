@@ -94,9 +94,28 @@ public class Routes2 {
 				BigInteger[][] R = new BigInteger[n+1][m+1];
 				int i = 0;
 				int j = 0;
-				while (i <= n) {
+		 
+		 
+		//outer loop invariants
+		//1. n and m are integer inputs such that n >= 1 and m>=1.
+		//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
+		//3. i is an integer variable such that 0 <= i <= n+1
+		//4. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
+				
+		 		while (i <= n) {		//Bound function: F(n,i) = n-i+1
+
+
 					j = 0;
-					while (j <= m) {
+					
+					
+		//inner loop invariants
+		//1. n and m are integer inputs such that n >= 1 and m>=1.
+		//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
+		//3. i is an integer variable such that 0 <= i <= n+1
+		//4. j is an integer variable such that 0 <= j <= m+1
+		//5. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
+					
+					while (j <= m) {		//Bound function: F(m,j) = m-j+1
 						if ((i == 0) || (j == 0)) {
 								R[i][j] = BigInteger.ONE;
 							}
@@ -115,21 +134,6 @@ public class Routes2 {
                 
                 }
 
- //outer loop invariants
-//1. n and m are integer inputs such that n >= 1 and m>=1.
-//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
-//3. i is an integer variable such that 0 <= i <= n+1
-//4. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
 
-//inner loop invariants
-//1. n and m are integer inputs such that n >= 1 and m>=1.
-//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
-//3. i is an integer variable such that 0 <= i <= n+1
-//4. j is an integer variable such that 0 <= j <= m+1
-//5. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
-
-//bound functions
-//F(m,j) = m-j+1
-//F(n,i) = n-i+1
 
 
