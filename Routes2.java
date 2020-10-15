@@ -101,8 +101,9 @@ public class Routes2 {
 		//2. R is a (variable) ((n+1) x (m+1)) array of at least one integer.
 		//3. i is an integer variable such that 0 <= i <= n+1
 		//4. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
+		//Bound function: F(n,i) = n-i+1 
 				
-		 		while (i <= n) {		//Bound function: F(n,i) = n-i+1
+		 		while (i <= n) {		
 
 
 					j = 0;
@@ -114,8 +115,9 @@ public class Routes2 {
 		//3. i is an integer variable such that 0 <= i <= n+1
 		//4. j is an integer variable such that 0 <= j <= m+1
 		//5. R[k][l] = Routes(k, l) for all integers k and l such that 0 ≤ k ≤ i − 1 and 0 ≤ l ≤ m.
+		//Bound function: F(m,j) = m-j+1
 					
-					while (j <= m) {		//Bound function: F(m,j) = m-j+1
+					while (j <= m) {		
 						if ((i == 0) || (j == 0)) {
 								R[i][j] = BigInteger.ONE;
 							}
